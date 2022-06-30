@@ -1,0 +1,424 @@
+.login-wrapper {
+  /* width: 350px;
+  height: 572px; */
+  width: 728px;
+  height: 450px;
+  /* height: 100%;  */
+  margin: 0 auto;
+  background: #F6F7F8;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.07), 0px 2px 10px 0px rgba(0, 0, 0, 0.13);
+  border-radius: 4px;
+}
+
+.login-header {
+  width: 100%
+}
+
+.login-header-quit {
+  width: 20px;
+  height: 20px;
+  margin: 10px 0 0 9px;
+}
+
+
+.login-main {
+  /* flex: 1;
+  width: 100%; */
+  /* margin-top: 29px; */
+  margin: 29px 48px 0 48px;
+}
+
+.login-main-logo-box {
+  margin-bottom: 28px;
+}
+
+.login-main-logo {
+  width: 75px;
+  height: 75px;
+}
+
+.login-main-item {
+  width: 100%;
+  height: 50px;
+  color: #070E0B;
+  margin-bottom: 10px;
+  /* border-bottom: 1px solid #DCDFE6; */
+  background: #FFFFFF;
+  border-radius: 6px;
+  border: 1px solid #EAEDEF;
+}
+
+.login-main-item-title {
+  /* width: 65px; */
+  text-align: left;
+  margin-left: 16px;
+}
+
+.login-main-item-input {
+  flex: 1;
+}
+
+.login-main-item-other {
+  width: 100%;
+  margin-bottom: 42px;
+  /* margin-top: 7px; */
+  justify-content: space-between;
+}
+
+.login-main-item-ServiceNumberLogin,
+.login-main-item-FogetPassword {
+  /* flex: 1 1 auto; */
+  font-size: 10px;
+  color: #070E0B;
+  opacity: 0.4;
+}
+
+.login-main-item-AutoLogin {
+  /* width: 100%; */
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.login-main-item-AutoLogin-icon {
+  width: 17px;
+  height: 17px;
+}
+
+.login-main-item-AutoLogin-title {
+  color: #070E0B;
+  opacity: 0.4;
+  font-size: 10px;
+  margin-left: 6px;
+}
+
+.login-main-btn {
+  width: 254px;
+  height: 50px;
+  font-weight: 500;
+  color: #FFFFFF;
+
+  font-size: 14px;
+  /* font-family: Futura-Medium, Futura; */
+  border-radius: 6px;
+
+}
+
+.login-main-SIGNIN {
+  cursor: pointer;
+  /* background: #17BA77;  */
+  background-color: rgba(23, 186, 119, 1);
+  margin-bottom: 10px;
+}
+
+.login-main-SIGNIN:hover {
+  background-color: rgba(20, 167, 107, 1);
+}
+
+.login-main-SIGNIN-click {
+  background-color: rgba(18, 148, 95, 1);
+}
+
+.login-main-SIGNIN-disabled {
+  background-color: rgba(156, 222, 196, 1)
+}
+
+.login-main-REGISTER {
+  cursor: pointer;
+  /* background: #070E0B; */
+  background-color: rgba(7, 14, 11, 1);
+}
+
+.login-main-REGISTER:hover {
+  background-color: rgba(56, 62, 59, 1);
+}
+
+.login-main-REGISTER-click {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.login-main-REGISTER-disabled {
+  background-color: rgba(187, 189, 188, 1);
+}
+
+/*  修改element默认样式下拉框的内边距*/
+.el-input__inner {
+  border: 0px !important;
+}
+
+.login-main .el-input--suffix .el-input__inner {
+  padding: 0 15px;
+  border: 0px !important;
+}
+
+.login-main-item .el-icon-error:hover {
+  color: #409EFF;
+}
+
+/* 新版 - 开始*/
+.login-left {
+  width: 254px;
+  height: 100%;
+  background: #070E0B;
+}
+
+.login-new-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.login-right {
+  flex: 1;
+  height: 100%;
+}
+
+.login-right-header {
+  margin-top: 10px;
+  margin-right: 10px;
+  justify-content: flex-end;
+}
+
+.login-QR {
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+}
+
+.login-right-main {
+  margin: 0 60px;
+  margin-top: 34px;
+}
+
+.login-right-main-header {
+  margin-bottom: 30px;
+}
+
+.login-right-main-header-toggle {}
+
+.login-right-main-header-toggle-item {
+  height: 19px;
+  font-size: 14px;
+  color: #070E0B;
+  line-height: 19px;
+  cursor: pointer;
+}
+
+.login-toggle-checked {
+  color: #17BA77;
+  position: relative;
+}
+
+.login-toggle-checked-mark {
+  /* content: '';
+  position: absolute;
+  left: -6px;
+  top: 50%; */
+  margin-right: 6px;
+  width: 4px;
+  height: 12px;
+  background: #17BA77;
+  /* transform: translate(0%, -50%); */
+}
+
+.login-right-main-header-toggle-item:nth-child(odd) {
+  margin-right: 65px;
+}
+
+.login-right-main-from {}
+
+.login-right-main-from-item {
+  /* width: 354px; */
+  width: 100%;
+  height: 48px;
+  background: #FFFFFF;
+  border-radius: 6px;
+  border: 1px solid #EAEDEF;
+}
+
+.login-right-main-from-item-select {
+  /* width: 60px; */
+  width: 74px;
+  height: 100%;
+  position: relative;
+}
+
+.login-right-main-from-item-select::after {
+  content: '';
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  width: 1px;
+  height: 16px;
+  background: #070E0B;
+  opacity: 0.2;
+  transform: translate(0%, -50%);
+}
+
+.login-right-main-from-item-input {
+  flex: 1;
+  height: 100%;
+}
+
+.login-right-main-from-convention {
+  margin-top: 110px;
+}
+
+.login-right-main-from-convention-protocol {
+  margin-bottom: 10px;
+}
+
+.login-right-main-from-convention-protocol:last-child {
+  margin-bottom: 0;
+}
+
+.Checkbox-icon {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+.login-right-main-from-convention-title {
+  height: 15px;
+  font-size: 12px;
+  color: #969A98;
+  line-height: 15px;
+  margin-left: 6px;
+}
+
+.login-right-main-from-convention-title span {
+  color: rgba(23, 186, 119, 1);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-right-main-from-Next {
+  width: 100%;
+  height: 48px;
+  margin-top: 31px;
+  border-radius: 6px;
+  background: #17BA77;
+  cursor: pointer;
+}
+
+.login-right-main-from-Next span {
+  height: 21px;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 21px;
+}
+
+
+/*  扫码-登录 开始*/
+.login-right-main-QR {}
+
+.login-right-main-QR-header {}
+
+.login-right-main-QR-header-title {
+  height: 21px;
+  font-size: 16px;
+  color: #17BA77;
+  line-height: 21px;
+}
+
+.login-right-main-QR-header-subtitle {
+  height: 15px;
+  font-size: 12px;
+  margin-top: 6px;
+  color: #070E0B;
+  line-height: 15px;
+}
+
+.login-right-main-QR-main {
+  margin-top: 43px;
+}
+
+.login-right-main-QR-main-img {
+  width: 186px;
+  height: 186px;
+}
+
+/*  扫码-登录 结束*/
+
+/* 登录 下一步 - 手机号 开始 */
+.login-right-next {
+  margin: 0 60px;
+}
+
+.login-right-next-header {
+  margin-top: 70px;
+}
+
+.login-right-next-header-title {
+  height: 21px;
+  font-size: 16px;
+  color: #17BA77;
+  line-height: 21px;
+}
+
+.login-right-next-header-subtitle {
+  margin-top: 6px;
+  height: 30px;
+  font-size: 12px;
+  color: #070E0B;
+  line-height: 15px;
+}
+
+.login-right-next-Code {}
+
+.login-right-next-Code-title {
+  opacity: 0.4;
+  margin: 10px 0 0 10px;
+  height: 15px;
+  font-size: 12px;
+  color: #070E0B;
+  line-height: 15px;
+}
+.login-right-next-Code-title {
+  opacity: 0.4;
+  margin: 10px 0 0 10px;
+  height: 15px;
+  font-size: 12px;
+  color: #070E0B;
+  line-height: 15px;
+}
+.login-right-next-Password{
+
+}
+.login-right-next-Password-title{
+  margin-top: 30px;
+  height: 15px;
+font-size: 12px;
+color: #17BA77;
+line-height: 15px;
+cursor: pointer;
+}
+ 
+.login-right-next-btn {
+  width: 100%;
+  height: 48px;
+  margin-top: 77px;
+  border-radius: 6px;
+  background: #17BA77;
+  cursor: pointer;
+}
+
+.login-right-next-btn span {
+  height: 21px;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 21px;
+}
+
+.login-right-next-Password-subtitle{
+  height: 15px;
+font-size: 12px;
+color: #969A98;
+line-height: 15px;
+margin-top: 10px;
+}
+.login-right-next-Password-subtitle span{
+color: #17BA77;
+cursor: pointer;
+}
+/* 登录 下一步 - 手机号 结束 */
+
+/* 新版 - 结束*/
