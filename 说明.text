@@ -1,0 +1,12 @@
+npm install   运行vue
+
+找到cef 壳 config文件下方的 client.cnf文件 （如果没有 运行JJ.exe文件 会自动创建client.cnf）
+
+ client.cnf文件  修改内容  修改contentpath = 的文件路径 指向需要运行的项目 默认指向运行 index.html （指向的路径下方必须要有index.html）
+[debug]
+#contentpath=D:\project\JJtest\dist
+contentpath=D:\SelfProject\JJDemoVersion-2\dist
+showDevTools=true
+[global]
+logLevel=4
+version=4.11
