@@ -150,7 +150,8 @@ export default {
 
   },
   mounted() {
-   
+       // 将事件侦听器函数附加到窗口的resize事件  通过实时监听页面宽度高度 变化 来实时监听 设置 当前时间 圆点位置
+    window.addEventListener("resize", this.setElDividingLine);
     this.init();
     console.log(this.user, this.info)
     // this.$refs.editDiv.focus();
@@ -171,7 +172,7 @@ export default {
       console.log(this.HoursList)
       //    默认选中今天
       this.checkedDate = this.timeConvert(new Date());
-
+      // 设置 当前时间 圆点位置
       this.setElDividingLine();
 
       // 日期选择月份 默认值
@@ -549,6 +550,14 @@ export default {
     },
 
 
+  },
+     // 销毁前状态
+  beforeDestroy() {
+    window.removeEventListener("resize", this.setElDividingLine);
+    // console.group("beforeDestroy 销毁前状态 LogDetails===============》");
+  },
+  destroyed() {
+    // console.group("destroyed 销毁完成状态 LogDetails===============》");
   }
 };
 </script>
