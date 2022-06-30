@@ -167,6 +167,8 @@
         </div>
         <div class="Video-main-screenMode-content">
           <video class="video-screen"></video>
+          <!-- 缩放大小 显示 -->
+          <!-- <div class="Video-scalingRatio">{{ Math.round(screenZoom*100)+'%'}}</div> -->
         </div>
       </div>
       <!-- 成员列表 -->
@@ -563,20 +565,24 @@ export default {
       }
       console.log(this.screenRotateDeg)
       this.$nextTick(() => {
-        $('.Video-main-screenMode-content').find('video').css({ 'transform': 'rotate(' + this.screenRotateDeg + 'deg)' })
+      $('.Video-main-screenMode-content').find('video').css({ 'transform': 'rotate(' + this.screenRotateDeg + 'deg) scale(' + this.screenZoom + ')' })
       });
     },
     // 放大 缩小
     OnVideoZoom(out) {
       if (out) {
-        this.screenZoom = this.screenZoom - 0.1;
+        if (this.screenZoom >= 0.2 ) {
+          this.screenZoom = this.screenZoom - 0.1;
+        } else {
+          return alert('已经最小了');
+        }
       } else {
         this.screenZoom = this.screenZoom + 0.1;
       }
 
       console.log(this.screenZoom)
       this.$nextTick(() => {
-        $('.Video-main-screenMode-content').find('video').css({ 'transform': 'scale(' + this.screenZoom + ')' })
+        $('.Video-main-screenMode-content').find('video').css({ 'transform': 'rotate(' + this.screenRotateDeg + 'deg) scale(' + this.screenZoom + ')' })
       });
     },
     // 屏幕共享

@@ -65,7 +65,10 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
+           //原始打包 img 文件名称 代码设置
+          // name: utils.assetsPath('img/[name].[hash:7].[ext]')
+           // 打包 固定 img 文件名称 代码设置
+          name: utils.assetsPath('img/[name].[ext]?v=[hash:7]')
         }
       },
       {
