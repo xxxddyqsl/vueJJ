@@ -155,7 +155,10 @@
 <script>
 //这里可以导入其他文件（比如：组件，工具js，第三方插件js，json文件，图片文件等等）
 //例如：import 《组件名称》 from '《组件路径》';
-
+// 注册页面 不用设置 页面id 当前窗口 打开主页面 设置页面id 无法打开主页面
+var FRAMEID = '';
+import services from '../../static/utils/services'
+import utils from '../../static/utils/utils'
 export default {
   name: 'loginRegister',
   //import引入的组件需要注入到对象中才能使用
@@ -223,15 +226,27 @@ export default {
   watch: {},
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-    // 获取url 后面的参数
-    let params = JSON.parse(this.$route.query.params);
+    // cef框架
+     let params;
+    if (typeof jj != 'undefined') {
+      // 获取url 后面的参数
+      params = services.getSearch(window.location.href);
+    } else { 
+       // 获取url 后面的参数
+    params = JSON.parse(this.$route.query.params);
     if (params.Type == "Phone") {
       this.loginFrom.Phone = params.Phone;
     }
     if (params.Type == "Email") {
       this.loginFrom.Email = params.Email;
     }
-    console.log(JSON.parse(this.$route.query.params));
+    }
+    // console.log(this.params)
+    utils.FRAMEID = FRAMEID;
+    // 引入对应的js
+    // utils.writeScript(FRAMEID);
+   
+    // console.log(JSON.parse(this.$route.query.params));
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
@@ -261,9 +276,11 @@ export default {
         var url = this.$router.resolve({ path: "/Main" });
         let w = 1364;
         let h = 844;
+        console.log('jj cef框架暴露的变量')
         // 调用cef 接口 当前窗口打开
         services.frameService.reset('main', 'index.html' + url.href, params, w, h);
       } else {
+         console.log(' winOpen')
         var url = this.$router.resolve({ path: "/Main?constraints=" + JSON.stringify(params) });
         let w = 1364;
         let h = 844;

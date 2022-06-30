@@ -131,7 +131,8 @@ export default {
         { id: 'f', setDate: '2022-06-8 10:00', endDate: '2022-06-8 10:30', title: 'MAH Meeting', text: '测试日程F' },
         { id: 'g', setDate: '2022-06-27 10:00', endDate: '2022-06-27 14:30', title: 'MAH Meeting', text: '测试日程G' },
         { id: 'p', setDate: '2022-06-29 11:00', endDate: '2022-06-29 12:30', title: 'MAH Meeting', text: '测试日程P' },
-        // { id: 'L', setDate: '2022-06-29 11:00', endDate: '2022-07-01 12:30', title: 'MAH Meeting', text: '测试日程P' },
+        { id: 'L', setDate: '2022-07-02 11:00', endDate: '2022-07-02 12:30', title: 'MAH Meeting', text: '测试日程P' },
+         { id: 'M', setDate: '2022-07-01 11:00', endDate: '2022-07-01 12:30', title: 'MAH Meeting', text: '测试日程P' },
       ],
       scheduleDetailHtml: '',
       weeks: [
@@ -414,18 +415,19 @@ export default {
         node.parentNode.querySelector('.calendar-main-date-schedule-Detail').style.display = 'block';
         // 获取最外层宽度
         let wrapperW = document.querySelector('.calendar-main-date-schedule-box').offsetWidth;
-        // 获取自己的距离左侧的px 和自己的宽度
-        let nLe = node.offsetLeft; let nw = node.offsetWidth;
+        // 获取自己父元素的距离左侧的px 和自己的宽度
+        let nLe =  node.parentNode.offsetLeft; let nw = node.offsetWidth;
         // 获取详情的宽度
         let Detailw = node.parentNode.querySelector('.calendar-main-date-schedule-Detail').offsetWidth;
         console.log(wrapperW, nw, Detailw)
         if ((Detailw + nw + nLe) >= wrapperW) {
           // parentNode 获取父节点
-          node.parentNode.querySelector('.calendar-main-date-schedule-Detail').style.left = '-335px';
+          // node.parentNode.querySelector('.calendar-main-date-schedule-Detail').style.left = '-335px';
+           node.parentNode.querySelector('.calendar-main-date-schedule-Detail').style.left = '-'+(Detailw+10)+'px';
         }
       });
       // alert(111)
-      console.log(node, data)
+      // console.log(node, data)
     },
     // 隐藏 日程详情
     hideScheduleDetails(even) {
@@ -465,7 +467,7 @@ export default {
 
         dom.setAttribute("style", "height: " + (H * this.minuTop) + "px;top: " + (T * this.minuTop) + "px;");
       }
-      console.log(dom)
+      // console.log(dom)
     },
     // 获取 时间 为周几
     getWeekDate(date) {

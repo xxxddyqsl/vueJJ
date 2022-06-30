@@ -171,6 +171,8 @@
 
 
 .calendar-main-date-schedule {
+  position: relative;
+
   flex: 1;
   min-width: 172px;
   height: 93px;
@@ -220,7 +222,7 @@
 .calendar-main-date-Hours-DividingLine span::before {
   content: '';
   position: absolute;
-  /* width: 100%; */
+  width: 100%;
   height: 1px;
   background-color: rgba(23, 186, 119, 1);
   top: 50%;
@@ -275,7 +277,9 @@
 }
 
 .calendar-main-date-schedule-Detail {
-  position: relative;
+  /* position: relative; */
+  position: absolute;
+  /* right: 169px; */
   top: -72px;
   left: 169px;
   width: 326px;
