@@ -168,7 +168,9 @@
         <div class="Video-main-screenMode-content">
           <video class="video-screen"></video>
           <!-- 缩放大小 显示 -->
-          <!-- <div class="Video-scalingRatio">{{ Math.round(screenZoom*100)+'%'}}</div> -->
+           <!-- <div class="Video-scalingRatio">{{ Math.round(screenZoom*100)+'%'}}</div> -->
+            <!-- screenZoom 值 是 0 - 1 需要*100 设置百分比  -->
+           <div class="Video-scalingRatio">{{ GetPercent(screenZoom*100,100)}}</div>
         </div>
       </div>
       <!-- 成员列表 -->
@@ -303,48 +305,48 @@
       <div class="Video-screen-select-box gg-flex-1" @click="OnVideoSwitch('video')" v-show="webRTC.mode == 'screenSelect'?true:false">
         <div class="Video-screen-select" @click.stop>
           <div class="Video-screen-select-header ">
-            <div class="Video-screen-select-header-quit gg-flex-1 "  @click="OnVideoSwitch('video')">
+            <div class="Video-screen-select-header-quit gg-flex-1 " @click="OnVideoSwitch('video')">
               <img draggable="false" class="quit" src="../assets/images/login_quit.png" alt="">
             </div>
             <div class="Video-screen-select-header-title gg-flex-1"><span>Desktop and windows</span></div>
           </div>
           <div class="Video-screen-select-main gg-flex-4">
-            <div class="Video-screen-select-item  gg-flex-1  gg-flex-2"  @click="OnVideoSwitch('screen')">
-               <div class="Video-screen-select-item-video">
-                 <video class="Video-screen-select-item-video-bg" :style="{'background-image':'url('+require('../assets/images/Video-screen-select-A.png')+')'}"></video>
-               </div>
-               <div class="Video-screen-select-item-title">Desktop</div>
+            <div class="Video-screen-select-item  gg-flex-1  gg-flex-2" @click="OnVideoSwitch('screen')">
+              <div class="Video-screen-select-item-video">
+                <video class="Video-screen-select-item-video-bg" :style="{'background-image':'url('+require('../assets/images/Video-screen-select-A.png')+')'}"></video>
+              </div>
+              <div class="Video-screen-select-item-title">Desktop</div>
             </div>
-             <div class="Video-screen-select-item  gg-flex-1  gg-flex-2"  @click="OnVideoSwitch('screen')">
-               <div class="Video-screen-select-item-video">
-                 <video class="Video-screen-select-item-video-bg"  :style="{'background-image':'url('+require('../assets/images/Video-screen-select-B.png')+')'}"></video>
-               </div>
-               <div class="Video-screen-select-item-title">Sketch</div>
+            <div class="Video-screen-select-item  gg-flex-1  gg-flex-2" @click="OnVideoSwitch('screen')">
+              <div class="Video-screen-select-item-video">
+                <video class="Video-screen-select-item-video-bg" :style="{'background-image':'url('+require('../assets/images/Video-screen-select-B.png')+')'}"></video>
+              </div>
+              <div class="Video-screen-select-item-title">Sketch</div>
             </div>
-             <div class="Video-screen-select-item  gg-flex-1  gg-flex-2"  @click="OnVideoSwitch('screen')">
-               <div class="Video-screen-select-item-video">
-                 <video class="Video-screen-select-item-video-bg"  :style="{'background-image':'url('+require('../assets/images/Video-screen-select-C.png')+')'}"></video>
-               </div>
-               <div class="Video-screen-select-item-title">Pages</div>
+            <div class="Video-screen-select-item  gg-flex-1  gg-flex-2" @click="OnVideoSwitch('screen')">
+              <div class="Video-screen-select-item-video">
+                <video class="Video-screen-select-item-video-bg" :style="{'background-image':'url('+require('../assets/images/Video-screen-select-C.png')+')'}"></video>
+              </div>
+              <div class="Video-screen-select-item-title">Pages</div>
             </div>
 
-             <div class="Video-screen-select-item  gg-flex-1  gg-flex-2"  @click="OnVideoSwitch('screen')">
-               <div class="Video-screen-select-item-video">
-                 <video class="Video-screen-select-item-video-bg"  :style="{'background-image':'url('+require('../assets/images/Video-screen-select-D.png')+')'}"></video>
-               </div>
-               <div class="Video-screen-select-item-title">Safari</div>
+            <div class="Video-screen-select-item  gg-flex-1  gg-flex-2" @click="OnVideoSwitch('screen')">
+              <div class="Video-screen-select-item-video">
+                <video class="Video-screen-select-item-video-bg" :style="{'background-image':'url('+require('../assets/images/Video-screen-select-D.png')+')'}"></video>
+              </div>
+              <div class="Video-screen-select-item-title">Safari</div>
             </div>
-             <div class="Video-screen-select-item  gg-flex-1  gg-flex-2"  @click="OnVideoSwitch('screen')">
-               <div class="Video-screen-select-item-video">
-                 <video class="Video-screen-select-item-video-bg"  :style="{'background-image':'url('+require('../assets/images/Video-screen-select-E.png')+')'}"></video>
-               </div>
-               <div class="Video-screen-select-item-title">Chrome</div>
+            <div class="Video-screen-select-item  gg-flex-1  gg-flex-2" @click="OnVideoSwitch('screen')">
+              <div class="Video-screen-select-item-video">
+                <video class="Video-screen-select-item-video-bg" :style="{'background-image':'url('+require('../assets/images/Video-screen-select-E.png')+')'}"></video>
+              </div>
+              <div class="Video-screen-select-item-title">Chrome</div>
             </div>
-             <div class="Video-screen-select-item  gg-flex-1  gg-flex-2"  @click="OnVideoSwitch('screen')">
-               <div class="Video-screen-select-item-video">
-                 <video class="Video-screen-select-item-video-bg"  :style="{'background-image':'url('+require('../assets/images/Video-screen-select-F.png')+')'}"></video>
-               </div>
-               <div class="Video-screen-select-item-title">Pixelmator Pro</div>
+            <div class="Video-screen-select-item  gg-flex-1  gg-flex-2" @click="OnVideoSwitch('screen')">
+              <div class="Video-screen-select-item-video">
+                <video class="Video-screen-select-item-video-bg" :style="{'background-image':'url('+require('../assets/images/Video-screen-select-F.png')+')'}"></video>
+              </div>
+              <div class="Video-screen-select-item-title">Pixelmator Pro</div>
             </div>
 
           </div>
@@ -565,13 +567,13 @@ export default {
       }
       console.log(this.screenRotateDeg)
       this.$nextTick(() => {
-      $('.Video-main-screenMode-content').find('video').css({ 'transform': 'rotate(' + this.screenRotateDeg + 'deg) scale(' + this.screenZoom + ')' })
+        $('.Video-main-screenMode-content').find('video').css({ 'transform': 'rotate(' + this.screenRotateDeg + 'deg) scale(' + this.screenZoom + ')' })
       });
     },
     // 放大 缩小
     OnVideoZoom(out) {
       if (out) {
-        if (this.screenZoom >= 0.2 ) {
+        if (this.screenZoom >= 0.2) {
           this.screenZoom = this.screenZoom - 0.1;
         } else {
           return alert('已经最小了');
@@ -593,7 +595,7 @@ export default {
       // } else {
       //   this.webRTC.mode = 'screen';
       // };
-        this.webRTC.mode = key;
+      this.webRTC.mode = key;
       this.$nextTick(() => {
         $('#webRTC-main video').css({ 'object-fit': 'contain' });
       })
@@ -732,7 +734,20 @@ export default {
         window.close();
       }
     },
-
+    // js计算百分比 GetPercent(10,100)  '10%'
+    GetPercent(num, total) {
+      /// <summary>
+      /// 求百分比
+      /// </summary>
+      /// <param name="num">当前数</param>
+      /// <param name="total">总数</param>
+      num = parseFloat(num);
+      total = parseFloat(total);
+      if (isNaN(num) || isNaN(total)) {
+        return "-";
+      }
+      return total <= 0 ? "0%" : (Math.round(num / total * 10000) / 100.00) + "%";
+    },
   }
 };
 </script>

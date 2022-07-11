@@ -234,7 +234,7 @@ export default {
       console.log(this.timeConvert(data))
     },
 
-    // 设置圆点的位置
+    // 设置 当前日期标记-圆点开始的位置
     setElDividingLine() {
       this.$nextTick(() => {
         let k = this.getWeekDate(this.checkedDate);
@@ -260,11 +260,11 @@ export default {
         let parentNodeTop = document.getElementsByClassName('calendar-main-date-Hours-DividingLine')[0].parentNode.offsetTop;
         // 获取父节点 的高度
         let parentNodeHe = document.getElementsByClassName('calendar-main-date-Hours-DividingLine')[0].parentNode.offsetHeight;
-        // 获取整个容器的高度 /2 等于当前容器居中的位置  
+        // 获取整个容器的高度 /2 等于当前容器居中的位置
         let TableH = document.getElementsByClassName('calendar-main-date-Table')[0].parentNode.offsetHeight / 2;
         // 当前时间节点 父节点距离顶部的位置 - 获取整个容器的高度 /2 等于当前容器居中的位置  + 父节点自身的高度 = 当前父节点在屏幕中 滚动居中的位置
         let ScrollTop = (parentNodeTop - TableH) + parentNodeHe;
-        this.$refs['calendarScrollbar'].wrap.scrollTop = ScrollTop
+        this.$refs['calendarScrollbar'].wrap.scrollTop = ScrollTop;
         //  this.$refs['calendarScrollbar'].wrap.scrollTop = document.getElementsByClassName('calendar-main-date-Hours-DividingLine')[0].parentNode.offsetTop-document.getElementsByClassName('calendar-main-date-Table')[0].parentNode.offsetHeight/2+93;
         //修改  伪元素样式  当前日期之后颜色加重
         // document.styleSheets[0].addRule('.calendar-main-date-Hours-DividingLine span::before', 'left:' + (Math.abs(index) * w - 4) + 'px; width:' + bfw + 'px');
